@@ -1,5 +1,7 @@
 package cd.get.ready.algorithms;
 
+import java.util.HashMap;
+
 public class CountDuplicates {
     /**
      * Example of overloading a function that accepts a Array String
@@ -7,7 +9,15 @@ public class CountDuplicates {
      * @return
      */
     public Integer countDuplicates(String[] input){
-        return null;
+        HashMap<String,Integer> hashy = new HashMap<String, Integer>();
+        int count =0;
+        for(int i=0; i < input.length;i++){
+            hashy.put(input[i],1);
+            if(hashy.get(input[i]) > 1){
+                count++;
+            }
+        }
+        return count;
     }
 
     /**
